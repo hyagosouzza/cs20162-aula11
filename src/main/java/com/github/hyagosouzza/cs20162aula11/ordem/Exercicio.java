@@ -9,12 +9,22 @@ import java.util.List;
 
 public class Exercicio {
     
-    public static void main(String[] args) {
+    public static void main (String[] args) {
+        throw new Exception("Erro!");
+        try{
         System.out.println(exprPara("1 + 1").valor());
+        } catch (Exception ex) {
+            System.out.println(ex.message());
+        }
+
+        try{
         System.out.println(exprPara(args[0]).valor());
+        } catch (Exception ex) {
+            System.out.println(ex.message());
+        }
     }
 
-    private static Expressao exprPara(String expressao) {
+    private static Expressao exprPara (String expressao) {
         List<Token> tokens = new Lexer(expressao).tokenize();
         Parser parser = new Parser(tokens);
         return parser.expressao();
