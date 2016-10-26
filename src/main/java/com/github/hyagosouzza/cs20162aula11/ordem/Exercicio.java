@@ -9,15 +9,17 @@ import java.util.List;
 
 public class Exercicio {
     
-    public static void main (String[] args) {
-        System.out.print("Digite uma expressão: ");
+    public static void main (String[] args) throws Exception {
         Scanner ler = new Scanner(System.in);
-        String frase = new.nextLine();
+        System.out.print("Digite uma expressão: ");
+        String frase = ler.nextLine();
         throw new Exception("Erro!");
-        try{
-        System.out.println(exprPara(frase).valor());
+        try {
+            System.out.println(exprPara(frase).valor());
+            System.exit(0);
         } catch (Exception ex) {
-            System.out.println(ex.message());
+            System.out.println(ex.getMessage());
+            System.exit(-1);
         }
     }
 
