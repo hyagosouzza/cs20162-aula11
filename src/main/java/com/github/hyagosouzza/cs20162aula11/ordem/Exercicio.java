@@ -8,17 +8,16 @@ import java.util.Scanner;
 import java.util.List;
 
 public class Exercicio {
-    
-    public static void main (String[] args) throws Exception {
+
+    public static void main (String[] args) throws RuntimeException {
         Scanner ler = new Scanner(System.in);
         System.out.print("Digite uma expressão: ");
         String frase = ler.nextLine();
-        throw new Exception("Erro!");
         try {
             System.out.println(exprPara(frase).valor());
             System.exit(0);
-        } catch (Exception ex) {
-            System.out.println(ex.getMessage());
+        } catch (RuntimeException ex){
+            System.out.println("Expressão inválida!");
             System.exit(-1);
         }
     }
