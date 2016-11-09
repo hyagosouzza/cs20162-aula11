@@ -22,9 +22,7 @@
     <description>
         Projeto de referência (exemplo) inicial de desenvolvimento em Java com uso de JUnit.
     </description>
-
-    <url>https://github.com/kyriosdata/exemplo</url>
-
+         
     <organization>
         <name>Instituto de Informática (UFG) - Fábrica de Software</name>
         <url>http://www.inf.ufg.br</url>
@@ -41,22 +39,6 @@
             <url>https://creativecommons.org/licenses/by/4.0/</url>
         </license>
     </licenses>
-
-    <developers>
-        <developer>
-            <id>kyriosdata</id>
-            <name>Fábio Nogueira de Lucena</name>
-            <email>fabio@inf.ufg.br</email>
-            <organization>Instituto de Informática (UFG)</organization>
-            <organizationUrl>http://www.inf.ufg.br</organizationUrl>
-        </developer>
-    </developers>
-
-    <scm>
-        <connection>scm:git:https://github.com/kyriosdata/exemplo.git</connection>
-        <developerConnection>scm:git:https://github.com/kyriosdata/exemplo.git</developerConnection>
-        <url>https://github.com/kyriosdata/exemplo</url>
-    </scm>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
