@@ -28,7 +28,7 @@ public class Exercicio {
      * Método para relacionar com o usuário recebendo receber
      * uma expressão e escrevendo na tela o resultado
      * da mesma.
-     * @param []args final String
+     * @param args final String[]
      * @throw IllegalArgumentException - Caso a expressão recebida
      * seja inválida.
      */
@@ -50,11 +50,11 @@ public class Exercicio {
     * Método para recer uma expressão do main e
     * analisá-la.
     * @link https://github.com/kyriosdata/parser
-    * @param expressao String - Expressão recebida
+    * @param expressao final String - Expressão recebida
     * pelo main
     * @return parser - Expressão
     */
-    private static final Expressao exprPara (final String expressao) {
+    private static Expressao exprPara(final String expressao) {
         List<Token> tokens = new Lexer(expressao).tokenize();
         Parser parser = new Parser(tokens);
         return parser.expressao();
