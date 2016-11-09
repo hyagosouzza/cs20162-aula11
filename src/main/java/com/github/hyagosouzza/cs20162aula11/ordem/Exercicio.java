@@ -19,14 +19,14 @@ import java.util.List;
 
 /**
  * Classe para utilizar métodos a fim de descobrir o resultado
- * de uma expressão matemática.
+ * de uma expressão (matemática).
  * @version 1.0
  */
 public class Exercicio {
 
     /**
      * Método para relacionar com o usuário recebendo receber
-     * uma expressão matemática e escrevendo na tela o resultado
+     * uma expressão e escrevendo na tela o resultado
      * da mesma.
      * @param []args final String
      * @throw IllegalArgumentException - Caso a expressão recebida
@@ -47,12 +47,12 @@ public class Exercicio {
     }
 
     /**
-    * Método para recer uma expressão matematica do main e
+    * Método para recer uma expressão do main e
     * analisá-la.
     * @link https://github.com/kyriosdata/parser
-    * @param expressao String - Expressão matematica recebida
+    * @param expressao String - Expressão recebida
     * pelo main
-    * @return parser
+    * @return parser - Expressão
     */
     private static final Expressao exprPara (final String expressao) {
         List<Token> tokens = new Lexer(expressao).tokenize();
@@ -61,7 +61,7 @@ public class Exercicio {
     }
 
     /**
-     * Método para verificar se o bissexto recebido é aceitável.
+     * Método para verificar se a expressão recebida é aceitável.
      * @param frase final String
      * @return int - Valor lógico (0 ou 1)
      */
