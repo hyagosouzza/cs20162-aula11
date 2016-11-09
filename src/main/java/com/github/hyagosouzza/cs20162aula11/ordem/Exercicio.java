@@ -9,22 +9,17 @@ import java.util.List;
 
 public class Exercicio {
 
-    public static void main (String[] args) throws RuntimeException {
+    public static void main (String[] args) {
         Scanner ler = new Scanner(System.in);
         System.out.print("Digite uma expressão: ");
         String frase = ler.nextLine();
-        StringBuilder sb = new StringBuilder();
 
         try {
             System.out.println(exprPara(frase).valor());
-            int status = avaliaExpressao(args, sb);
-            System.out.println(sb.toString());
-            System.exit(status);
-        } catch (RuntimeException ex){
+            System.exit(avaliaExpressao(frase));
+        } catch (IllegalArgumentException ex){
             System.out.println("Expressão inválida!");
-            int status = avaliaExpressao(args, sb);
-            System.exit(status);
-        }
+            System.exit(avaliaExpressao(frase));        }
     }
 
     private static Expressao exprPara (String expressao) {
@@ -33,13 +28,12 @@ public class Exercicio {
         return parser.expressao();
     }
 
-    public static int avaliaExpressao(String[] args, StringBuilder sb) {
+    public static int avaliaExpressao(String frase) {
 
         try {
-            sb = (exprPara(args).valor());
+            exprPara(frase).valor();
             return 0;
-        } catch (RuntimeException ex){
-            sb = (exprPara(args).valor());
+        } catch (IllegalArgumentException ex){
             return 1;
         }
     }

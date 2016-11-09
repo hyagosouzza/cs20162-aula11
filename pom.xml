@@ -92,7 +92,7 @@
 
     <build>
              <!-- Define o nome do arquivo a ser gerado (.jar é acrescentada) -->
- +        <finalName>Exemplo</finalName>
+        <finalName>Exemplo</finalName>
         <plugins>
 
             <plugin>
