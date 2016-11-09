@@ -13,12 +13,17 @@ public class Exercicio {
         Scanner ler = new Scanner(System.in);
         System.out.print("Digite uma expressão: ");
         String frase = ler.nextLine();
+        StringBuilder sb = new StringBuilder();
+
         try {
             System.out.println(exprPara(frase).valor());
-            System.exit(0);
+            int status = avaliaExpressao(args, sb);
+            System.out.println(sb.toString());
+            System.exit(status);
         } catch (RuntimeException ex){
             System.out.println("Expressão inválida!");
-            System.exit(-1);
+            int status = avaliaExpressao(args, sb);
+            System.exit(status);
         }
     }
 
@@ -26,5 +31,16 @@ public class Exercicio {
         List<Token> tokens = new Lexer(expressao).tokenize();
         Parser parser = new Parser(tokens);
         return parser.expressao();
+    }
+
+    public static int avaliaExpressao(String[] args, StringBuilder sb) {
+
+        try {
+            sb = (exprPara(args).valor());
+            return 0;
+        } catch (RuntimeException ex){
+            sb = (exprPara(args).valor());
+            return 1;
+        }
     }
 }
