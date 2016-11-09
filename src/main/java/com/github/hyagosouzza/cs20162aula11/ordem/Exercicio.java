@@ -54,7 +54,7 @@ public class Exercicio {
     * pelo main
     * @return parser
     */
-    private static Expressao exprPara (final String expressao) {
+    private static final Expressao exprPara (final String expressao) {
         List<Token> tokens = new Lexer(expressao).tokenize();
         Parser parser = new Parser(tokens);
         return parser.expressao();
@@ -65,7 +65,7 @@ public class Exercicio {
      * @param frase final String
      * @return int - Valor lógico (0 ou 1)
      */
-    public static int avaliaExpressao(final String frase) {
+    public static final int avaliaExpressao(final String frase) {
 
         try {
             exprPara(frase).valor();
