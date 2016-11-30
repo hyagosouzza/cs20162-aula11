@@ -13,8 +13,6 @@ import com.github.kyriosdata.parser.Parser;
 
 import com.github.kyriosdata.parser.Token;
 
-import java.util.Scanner;
-
 import java.util.List;
 
 /**
@@ -33,16 +31,11 @@ public class Exercicio {
      * seja inválida.
      */
     public static final void main(final String[] args) {
-        Scanner ler = new Scanner(System.in);
-        System.out.print("Digite uma expressão: ");
-        String frase = ler.nextLine();
 
         try {
-            System.out.println(exprPara(frase).valor());
-            System.exit(avaliaExpressao(frase));
+            System.exit(avaliaExpressao(args[0]));
         } catch (IllegalArgumentException ex) {
-            System.out.println("Expressão inválida!");
-            System.exit(avaliaExpressao(frase));
+            System.exit(avaliaExpressao(args[0]));
         }
     }
 
