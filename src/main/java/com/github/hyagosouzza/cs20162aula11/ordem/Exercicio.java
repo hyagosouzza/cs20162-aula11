@@ -23,28 +23,10 @@ import java.util.List;
 public class Exercicio {
 
     /**
-     * Método para relacionar com o usuário recebendo receber
-     * uma expressão e escrevendo na tela o resultado
-     * da mesma.
-     * @param args final String[]
-     * @throw IllegalArgumentException - Caso a expressão recebida
-     * seja inválida.
-     */
-    public static final void main(final String[] args) {
-
-        try {
-            System.exit(avaliaExpressao(args[0]));
-        } catch (IllegalArgumentException ex) {
-            System.exit(avaliaExpressao(args[0]));
-        }
-    }
-
-    /**
     * Método para recer uma expressão do main e
     * analisá-la.
     * @link https://github.com/kyriosdata/parser
-    * @param expressao final String - Expressão recebida
-    * pelo main
+    * @param expressao final String - Expressão matemática recebida
     * @return parser - Expressão
     */
     private static Expressao exprPara(final String expressao) {
@@ -55,7 +37,9 @@ public class Exercicio {
 
     /**
      * Método para verificar se a expressão recebida é aceitável.
-     * @param frase final String
+     * @param frase final String - Expressão matemática recebida
+     * @throws IllegalArgumentException - Caso a expressão recebida
+     * seja inválida.
      * @return int - Valor lógico (0 ou 1)
      */
     public static final int avaliaExpressao(final String frase) {
@@ -65,6 +49,23 @@ public class Exercicio {
             return 0;
         } catch (IllegalArgumentException ex) {
             return 1;
+        }
+    }
+
+    /**
+     * Método para relacionar com o usuário recebendo receber
+     * uma expressão e escrevendo na tela o resultado da mesma.
+     * @param args final String[] - Expressão matemática dada pelo usuário
+     * @throws IllegalArgumentException - Caso a expressão recebida
+     * seja inválida.
+     */
+    public static final void main(final String[] args) {
+
+        try {
+            System.out.println(exprPara(args[0]).valor());
+            System.exit(avaliaExpressao(args[0]));
+        } catch (IllegalArgumentException ex) {
+            System.exit(avaliaExpressao(args[0]));
         }
     }
 }
